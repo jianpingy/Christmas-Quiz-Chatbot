@@ -7,7 +7,14 @@ from crewai import Agent, Task, Crew, Process, LLM
 # os.environ["WATSONX_APIKEY"] = os.getenv("WATSONX_APIKEY", "")
 # os.environ["WATSONX_PROJECT_ID"] = os.getenv("WATSONX_PROJECT_ID", "")
 # os.environ["WATSONX_URL"] = os.getenv("WATSONX_URL", "")
-watsonx_llm = LLM(model="watsonx/ibm/granite-3-8b-instruct", temperature=0.7)
+project_id = os.environ.get('WATSONX_AI_PROJECT_ID')
+api_key = os.environ.get("WATSONX_APIKEY")
+
+watsonx_llm = LLM(
+    model="watsonx/ibm/granite-3-8b-instruct", 
+    base_url="https://us-south.ml.cloud.ibm.com",
+    project_id=project_id,
+    temperature=0.7)
 
 
 # --- 2. Agent Definitions (Researcher, Host, Santa) ---
