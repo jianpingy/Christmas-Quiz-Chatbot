@@ -4,7 +4,9 @@ from crewai import Agent, Task, Crew, Process, LLM
 
 # --- 1. Configuration ---
 # Ensure WATSONX_APIKEY, WATSONX_PROJECT_ID, and WATSONX_URL are set
-
+# os.environ["WATSONX_APIKEY"] = os.getenv("WATSONX_APIKEY", "")
+# os.environ["WATSONX_PROJECT_ID"] = os.getenv("WATSONX_PROJECT_ID", "")
+# os.environ["WATSONX_URL"] = os.getenv("WATSONX_URL", "")
 watsonx_llm = LLM(model="watsonx/ibm/granite-3-8b-instruct", temperature=0.7)
 
 
