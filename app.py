@@ -162,4 +162,4 @@ with gr.Blocks(head=f"<script>{snow_js}</script>", css=santa_css, theme=gr.theme
     msg.submit(lambda: "", None, msg)
 
 if __name__ == "__main__":
-    demo.launch()
+    demo.launch(share=True)
